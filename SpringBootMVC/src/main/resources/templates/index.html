@@ -1,0 +1,21 @@
+<html>  
+<body>  
+<form th:action=@{/}>  
+UserName : <input type="text" th:name="name"/> <br><br>    
+<input type="submit" name="submit">  
+<input type="text" th:name="participant"/> <br>
+    <select th:name="country">
+        <option value="de">Germany</option>
+        <option value="nl">Netherlands</option>
+        <option value="pl">Poland</option>
+        <option value="lv">Latvia</option>
+    </select><br>
+    <input type="submit"/> 
+
+</form>
+
+<th:block th:each="userId: ${userIds}">
+    <a th:href="@{/(id=${userId})}"> User [[${userId}]]</a> <br/>
+</th:block>
+</body>
+</html>
